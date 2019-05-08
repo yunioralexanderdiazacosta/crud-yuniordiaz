@@ -1,0 +1,84 @@
+<div class="container my-3">
+	<div class="row">
+		<div class="col-md-10 offset-md-1">
+			<div class="card animated flipInX">
+				<div class="card-header">
+					<h3 class="text-center"> 
+						<i class="fas fa-user-plus"></i> Nuevo Contacto 
+					</h3>
+				</div>
+				<div class="card-body">
+					
+					<p class="alert alert-info">Los campos marcados con (*) son obligatorios</p>
+					
+					<form #f="ngForm" novalidate (ngSubmit)="f.form.valid  && guardarContacto()">
+						<div class="form-group">
+							<label>Razon Social <span class="text-danger">*</span></label>
+							<input type="text" class="form-control" name="razon_social" [(ngModel)]="razon_social" #v1="ngModel" placeholder="Ingresa la razón social" required>
+
+							 <!-- validacion -->
+							 <div *ngIf="v1.errors && (v1.dirty || v1.touched)">
+							 	<p  class="text-danger" *ngIf="v1.errors.required">La razón social es obligatoria</p>
+							 </div>
+						</div>
+
+						<div class="form-group">
+							<label>RIF <span class="text-danger">*</span></label>
+							<input type="text" class="form-control" name="rif" [(ngModel)]="rif" #v2="ngModel" placeholder="Ingresa el RIF..." required>
+
+							 <!-- validacion -->
+							 <div *ngIf="v2.errors && (v2.dirty || v2.touched)">
+							 	<p  class="text-danger" *ngIf="v2.errors.required">El rif es obligatorio</p>
+							 </div>
+						</div>
+
+
+						<div class="form-group">
+							<label>Persona de Contacto <span class="text-danger">*</span></label>
+							<input type="text" class="form-control" name="persona" [(ngModel)]="persona" #v3="ngModel" placeholder="Ingresa el contacto..." required>
+
+							 <!-- validacion -->
+							 <div *ngIf="v3.errors && (v3.dirty || v3.touched)">
+							 	<p  class="text-danger" *ngIf="v3.errors.required">El contacto es obligatorio</p>
+							 </div>
+						</div>
+
+						<div class="form-group">
+							<label>Ubicación <span class="text-danger">*</span></label>
+							<input type="text" class="form-control" name="ubicacion" [(ngModel)]="ubicacion" #v4="ngModel" placeholder="Ingresa la ubicación..." required>
+
+							<!-- validacion -->
+							 <div *ngIf="v4.errors && (v4.dirty || v4.touched)">
+							 	<p  class="text-danger" *ngIf="v4.errors.required">La ubicación es obligatoria</p>
+							 </div>
+						</div>
+
+						<div class="form-group">
+							<label>Teléfono Principal <span class="text-danger">*</span></label>
+							<input type="text" class="form-control" name="tlf_1" [(ngModel)]="tlf_1" #v5="ngModel" placeholder="Ingresa el Teléfono Principal..." required>
+
+							<!-- validacion -->
+							 <div *ngIf="v5.errors && (v5.dirty || v5.touched)">
+							 	<p  class="text-danger" *ngIf="v5.errors.required">El teléfono principal es obligatorio</p>
+							 </div>
+						</div>
+
+						<div class="form-group">
+							<label>Teléfono Opcional</label>
+							<input type="text" class="form-control" name="tlf_2" [(ngModel)]="tlf_2" placeholder="Teléfono Opcional...">
+						</div>
+						
+						<hr>
+					
+						<div class="form-group">
+							<button type="submit" class="btn btn-dark btn-lg btn-block" [disabled]="f.form.invalid">
+								<i class="fas fa-save"></i> Guardar
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

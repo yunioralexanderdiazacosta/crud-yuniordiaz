@@ -1,0 +1,23 @@
+<div class="container my-5">
+	<div class="row">
+		<div class="col-md-10 offset-md-1">
+			<div class="card animated flipInX">
+				<div class="card-header">
+					<h3 class="text-center">
+						<i class="fas fa-building"></i> Información del Contacto 
+					</h3>
+				</div>
+				<div class="card-body">
+					<ul class="list-group">
+						<li class="list-group-item"><b class="text-dark">Razon Social:</b> {{ contacto.razon_social }}</li>
+						<li class="list-group-item"><b class="text-dark">RIF:</b> {{ contacto.rif }}</li>
+						<li class="list-group-item"><b class="text-dark">Contacto:</b> {{ contacto.persona }}</li>
+						<li class="list-group-item"><b class="text-dark">Ubicación:</b> {{ contacto.ubicacion }}</li>
+						<li class="list-group-item"><b class="text-dark">Telefono Principal:</b> {{ contacto.tlf_1 }}</li>
+						<li class="list-group-item" *ngIf="contacto.tlf_2"><b class="text-dark">Telefono Opcional:</b> {{ contacto.tlf_2 }}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
